@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/login.css"> <!-- Link your CSS file -->
+    <title>Login</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">SafeBank</a>
+            <ul class="nav-links">
+                <li><a href="">Home</a><button class="home" onclick="window.location.href='index.html'">home</button></a></li>
+                <li><a href="#">About Us</a><button class="home" onclick="window.location.href='about.html'">about</button></a></li></li>
+                <li><a href="#">Services</a><button class="home" onclick="window.location.href='services.html'">services</button></li>
+                <li><a href="#">Contact</a><button class="home" onclick="window.location.href='services.html'">contact</button></li>
+            </ul>
+    <div id="login-container">
+        <form id="loginForm">
+            <h1>Welcome Back</h1>
+            <label for="loginEmail">Email:</label>
+            <input type="email" id="loginEmail" required placeholder="Email or Phone Number">
+            <label for="loginPassword">Password:</label>
+            <input type="password" id="loginPassword" required placeholder="Password">
+            <button type="submit" id="loginButton">Log In</button>
+            <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+        </form>
+    </div>
+    <script>
+        function loginUser() {
+    const email = document.getElementById('loginEmail').value;
+    const password = document.getElementById('loginPassword').value;
+
+    // Get the stored user information from Local Storage
+    const storedEmail = localStorage.getItem('userEmail');
+    const storedPassword = localStorage.getItem('userPassword');
+
+    // Check if the entered credentials match the stored ones
+    if (email === storedEmail && password === storedPassword) {
+        alert('Login successful! Redirecting to services page...');
+        window.location.href = "services.html"; // Redirect to services page
+    } else {
+        alert('Invalid email or password. Please try again.');
+    }
+}
+    </script>
+</body>
+</html>

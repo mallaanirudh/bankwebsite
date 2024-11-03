@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafeBank</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">SafeBank</a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a><button id="home" onclick="window.location.href='index.html'">home</button></a></li>
+                <li><a href="#about">About Us</a><button id="about" onclick="window.location.href='about.html'">about</button></a></li></li>
+                <li><a href="#services">Services</a><button id="service" onclick="window.location.href='services.html'">services</button></li>
+                <li><a href="#contact">Contact</a><button id="service" onclick="window.location.href='services.html'">contact</button></li>
+            </ul>
+            <div class="auth-buttons">
+                <a href="#login" class="btn"><button id="loginBtn" onclick="window.location.href='login.html'">Log In</button></a>
+                <a href="signup.html" class="btn" id="signupButton"><button class="signup-btn">Sign Up</button></a> <!-- Updated href -->
+            </div>
+        </div>
+    </nav>
+
+    <header class="banner" id="home">
+        <div class="banner-content">
+            <h1 id="header">Banking Made Simple</h1>
+            <p id = "para">Your trusted partner for all your financial needs.</p>
+            <a href="signup.html" class="btn banner-btn" id="bannerSignupButton">Open Your Account</a> <!-- Updated href -->
+        </div>
+    </header>
+
+    <section class="about-section" id="about">
+        <h2>About Us</h2>
+        <p>SafeBank is committed to providing you with safe and secure banking solutions.</p>
+    </section>
+
+    <section class="services-section" id="services">
+        <h2>Our Services</h2>
+        <div class="service-container">
+            <div class="service-box">
+                <img src="../images/saving-icon.png" alt="Savings Accounts">
+                <h3>Savings Accounts</h3>
+                <p>Grow your savings with our competitive interest rates.</p>
+            </div>
+            <div class="service-box">
+                <img src="../images/loans-icon.png" alt="Loans">
+                <h3>Loans</h3>
+                <p>Get the funding you need with our flexible loan options.</p>
+            </div>
+            <div class="service-box">
+                <img src="../images/credit-icon.png" alt="Credit Cards">
+                <h3>Credit Cards</h3>
+                <p>Enjoy rewards and benefits with our credit card offerings.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer" id="contact">
+        <h2>Contact Us</h2>
+        <p>Email: support@safebank.com | Phone: (123) 456-7890</p>
+        <div class="social-icons">
+            <a href="#"><img src="../images/facebook-icon.png" alt="Facebook"></a>
+            <a href="#"><img src="../images/twitter-icon.png" alt="Twitter"></a>
+            <a href="#"><img src="../images/instagram-icon.png" alt="Instagram"></a>
+        </div>
+        <p>&copy; 2024 SafeBank. All rights reserved.</p>
+    </footer>
+
+    <script src="javascript/script.js"></script> <!-- Include your JS file -->
+</body>
+</html>

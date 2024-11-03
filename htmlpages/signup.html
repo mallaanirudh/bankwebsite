@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Page</title>
+    <link rel="stylesheet" href="../css/signup.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">SafeBank</a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a><button id="home" onclick="window.location.href='index.html'">home</button></a></li>
+                <li><a href="#about">About Us</a><button id="about" onclick="window.location.href='about.html'">about</button></a></li></li>
+                <li><a href="#services">Services</a><button id="service" onclick="window.location.href='services.html'">services</button></li>
+                <li><a href="#contact">Contact</a><button id="service" onclick="window.location.href='services.html'">contact</button></li>
+            </ul>
+            </div>
+        </nav>
+
+    <!-- Signup Form Container -->
+    <form onsubmit="event.preventDefault(); signupUser();" enctype="multipart/form-data">
+        <h1>Create Your Account</h1>
+
+        <!-- Profile Picture Upload -->
+        <div class="profile-upload">
+            <label for="profilePic" class="profile-pic-label">
+                <div class="image-wrapper">
+                    <img src="../images/default-profile.png" id="profilePreview" alt="Profile Picture" />
+                    <span>Upload Profile Picture</span>
+                </div>
+            </label>
+            <input type="file" id="profilePic" name="profilePic" accept="image/*" onchange="previewImage(event)">
+        </div>
+
+        <!-- Other Form Fields -->
+        <label for="fullname">Full Name</label>
+        <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
+
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+
+        <label for="address">Address</label>
+        <input type="text" id="address" name="address" placeholder="Enter your address" required>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+        <label for="confirmPassword">Confirm Password</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Re-enter your password" required>
+
+        <!-- Submit Button -->
+        <button type="submit">Create Account</button>
+    </form>
+
+    <script>
+        function previewImage(event) {
+            const reader = new FileReader();
+            reader.onload = function() {
+                const output = document.getElementById('profilePreview');
+                output.src = reader.result;
+            };
+            reader.readAsDataURL(event.target.files[0]);
+        }
+
+        function signupUser() {
+            const fullname = document.getElementById('fullname').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+
+            // Check if passwords match
+            if (password !== confirmPassword) {
+                alert("Passwords do not match. Please try again.");
+                return; // Stop the function execution
+            }
+
+            // Save the user's info in Local Storage
+            localStorage.setItem('userFullName', fullname);
+            localStorage.setItem('userEmail', email);
+            localStorage.setItem('userPassword', password);
+
+            alert('Account created successfully! You can now log in.');
+            window.location.href = "login.html"; // Redirects to the login page
+        }
+    </script>
+</body>
+</html>

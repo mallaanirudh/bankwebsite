@@ -1,0 +1,188 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Root Variables for Colors */
+:root {
+    --bg-color: #f0f2f5; /* Light background color */
+    --container-bg-color: #ffffff; /* White background for form */
+    --dark-text-color: #333; /* Dark text color */
+    --light-text-color: #555; /* Slightly lighter text color */
+    --primary-color: #007bff; /* Primary button color */
+    --primary-hover: #0056b3; /* Darker shade on hover */
+    --link-color: #007bff; /* Link color */
+    --light-pink: #ffccd5; /* Light pink for links */
+    --hover-light-pink: #ffc0cb; /* Lighter pink on hover */
+}
+
+/* Body Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--bg-color); /* Light background color */
+    height: 100vh; /* Full height */
+    display: flex; /* Flexbox for centering */
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center horizontally */
+}
+
+/* Navbar */
+.navbar {
+    background-color: var(--primary-color); /* Using primary color */
+    color: #ffffff;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    padding: 15px 30px; /* Increased padding for better spacing */
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    position: fixed; /* Fixed position for a sticky navbar */
+    top: 0; /* Position at the top */
+    z-index: 1000;
+}
+
+/* Navbar Container */
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Logo Styles */
+.logo {
+    font-size: 36px; /* Adjusted logo size */
+    font-weight: bold;
+    color: #ffffff; /* Logo color */
+}
+
+/* Navigation Links Styling */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px; /* Increased gap between links */
+}
+
+.nav-links li {
+    margin: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #ffffff; /* Use white for better contrast */
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.3s, transform 0.2s;
+}
+
+.nav-links a:hover {
+    color: var(--hover-light-pink); /* Lighter pink on hover */
+    transform: scale(1.1); /* Slight scale effect on hover */
+}
+
+/* Main Content Area */
+.main-content {
+    display: flex; /* Use flexbox for centering */
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    margin-top: 100px; /* Space below navbar */
+    width: 100%; /* Full width */
+}
+
+/* Login Container */
+#login-container {
+    background-color: var(--container-bg-color); /* White background for form */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* More pronounced shadow */
+    padding: 40px; /* Padding inside the form */
+    width: 100%; /* Full width */
+    max-width: 400px; /* Maximum width */
+}
+
+/* Form Heading */
+h1 {
+    text-align: center; /* Centered heading */
+    font-size: 26px; /* Slightly larger font size */
+    margin-bottom: 20px; /* Space below heading */
+    color: var(--dark-text-color); /* Dark text color */
+}
+
+/* Form Labels */
+label {
+    display: block; /* Block display for labels */
+    margin-bottom: 5px; /* Space below label */
+    font-size: 14px; /* Font size */
+    color: var(--light-text-color); /* Slightly lighter text color */
+}
+
+/* Form Inputs */
+input[type="email"],
+input[type="password"] {
+    width: 100%; /* Full width */
+    padding: 12px; /* Padding inside inputs */
+    margin-bottom: 20px; /* Space below inputs */
+    border: 1px solid #ccc; /* Border */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 14px; /* Font size */
+    transition: border-color 0.3s; /* Transition effect for border */
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border-color: var(--primary-color); /* Highlight border on focus */
+}
+
+/* Submit Button */
+#loginButton {
+    width: 100%; /* Full width */
+    padding: 12px; /* Padding */
+    font-size: 16px; /* Font size */
+    font-weight: bold; /* Bold text */
+    background-color: var(--primary-color); /* Primary button color */
+    color: #fff; /* White text */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
+    transition: background-color 0.3s; /* Transition effect */
+}
+
+#loginButton:hover {
+    background-color: var(--primary-hover); /* Darker shade on hover */
+}
+
+/* Link Styles */
+p {
+    text-align: center; /* Center text */
+    margin-top: 15px; /* Space above paragraph */
+}
+
+p a {
+    color: var(--link-color); /* Link color */
+    text-decoration: none; /* Remove underline */
+}
+
+p a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Media Query for Mobile */
+@media (max-width: 480px) {
+    #login-container {
+        padding: 20px; /* Less padding on smaller screens */
+    }
+
+    h1 {
+        font-size: 20px; /* Smaller font size */
+    }
+
+    .navbar {
+        padding: 10px; /* Less padding on navbar */
+    }
+
+    .logo {
+        font-size: 28px; /* Adjusted logo size for mobile */
+    }
+}
